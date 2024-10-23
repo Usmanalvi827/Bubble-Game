@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #main {
+    background-color: rgb(202, 238, 202);
+  }
+  
+  #panel {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    background-color: white;
+  }
+  
+  #ptop h3 {
+    font-weight: bold;
+  }
+  
+  .box {
+    font-size: 24px;
+    padding: 10px 20px;
+  }
+  
+  #pbtm {
+    padding-top: 20px;
+  }
+  
+  .bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(72,104,72);
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+  
+.bubble:hover {
+  cursor: pointer;
+  background-color: rgb(50, 75, 50);
+  transform: scale(1.2);
+}
+  
+  .animated-bubble {
+    animation: floatBubble 5s ease-in-out infinite;
+  }
+
+  .game-over-message {
+    font-size: 2.5rem; /* Make it larger */
+    font-weight: bold;
+    color: red; /* Highlight in red */
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgb(50, 75, 50);/* Optional: Add a background color */
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  
+  /* Bubble float animation */
+  @keyframes floatBubble {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* For smaller screens (tablets) */
+@media (max-width: 768px) {
+  .bubble {
+      width: 45px;
+      height: 45px;
+      font-size: 1rem;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 576px) {
+  .bubble {
+      width: 35px;
+      height: 35px;
+      font-size: 0.8rem;
+  }
+
+  /* Adjust gap between bubbles for mobile */
+  #pbtm {
+      gap: 5px;
+  }
+
+  /* Adjust the score panel layout for mobile */
+  #ptop {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+  }
+  
+  .elm {
+      flex-direction: row;
+      justify-content: center;
+  }
+
+  .box {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+}
+
+/* For very small screens (below 400px) */
+@media (max-width: 400px) {
+  .bubble {
+      width: 30px;
+      height: 30px;
+      font-size: 0.7rem;
+  }
+
+  .box {
+      padding: 8px;
+      font-size: 0.8rem;
+  }
+}
